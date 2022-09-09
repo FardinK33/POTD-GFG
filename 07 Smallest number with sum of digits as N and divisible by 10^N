@@ -1,0 +1,42 @@
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution{
+	public:
+	string digitsNum(int N)
+	{
+	    int n = N, count=0;
+	    string ans;
+	    
+	    count = n%9;
+	    n = n/9;
+	    
+	    if(count>0) ans = to_string(count) + ans;
+	    if(n>0){
+	        string temp(n, '9');
+	        ans += temp;
+	    }
+	
+	    string s(N, '0');
+	    ans += s;
+	    return ans;
+	}
+};
+
+//{ Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		Solution ob;
+		string ans = ob.digitsNum(n);
+		cout << ans <<"\n";
+	}
+	return 0;
+}
+// } Driver Code Ends
